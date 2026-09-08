@@ -1,0 +1,276 @@
+/* ============================================================
+   말씀 놀자 (bible.chatgpts.kr) - 공통 스타일
+   - 모바일 우선 / 카드형 메뉴 / 큰 버튼 / 부드러운 색
+   - 읽기 도구답게 장식을 절제하고 본문 가독성을 최우선으로 둡니다.
+   ============================================================ */
+
+:root {
+  --ink:        #2f2a26;
+  --ink-soft:   #5c534b;
+  --muted:      #8b8178;
+  --line:       #e8e1d8;
+  --bg:         #fdfbf7;
+  --card:       #ffffff;
+  --key:        #8a6d4b;      /* 차분한 고동색 */
+  --key-soft:   #f3ece2;
+  --key-deep:   #6b533763;
+  --accent:     #4f7a68;      /* 낮은 채도의 초록 */
+  --accent-soft:#eaf2ee;
+  --radius:     14px;
+  --radius-lg:  20px;
+  --shadow:     0 1px 3px rgba(47, 42, 38, .06), 0 6px 18px rgba(47, 42, 38, .05);
+
+  /* 공통 로그인 모듈(cg-auth.css)이 참조하는 토큰 */
+  --cg-fg: var(--ink);
+  --cg-muted: var(--muted);
+  --cg-border: var(--line);
+  --cg-accent: var(--key);
+  --cg-btn-bg: #fff;
+  --cg-btn-bg-hover: var(--key-soft);
+  --cg-card-bg: var(--card);
+  --cg-chip-bg: var(--key-soft);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo',
+               'Noto Sans KR', system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  -webkit-text-size-adjust: 100%;
+}
+
+.wrap { max-width: 900px; margin: 0 auto; padding: 0 16px; }
+
+/* ---------- 헤더 ---------- */
+.site-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 14px 0 12px;
+}
+.brand-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--ink);
+  text-decoration: none;
+  letter-spacing: -.02em;
+  flex-shrink: 0;
+}
+.brand-logo .logo-char {
+  width: 34px; height: 34px;
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 10px;
+  background: var(--key-soft);
+  color: var(--key);
+  font-size: 18px;
+}
+.brand-logo .dot { color: var(--key); }
+.header-right { display: inline-flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+
+/* ---------- 상단 메뉴 ---------- */
+.nav-scroll {
+  display: flex; gap: 8px;
+  overflow-x: auto;
+  padding: 4px 0 12px;
+  scrollbar-width: none;
+}
+.nav-scroll::-webkit-scrollbar { display: none; }
+.nav-chip {
+  flex: 0 0 auto;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--ink-soft);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.nav-chip:hover { background: var(--key-soft); }
+.nav-chip.active { background: var(--key); border-color: var(--key); color: #fff; }
+
+/* ---------- 카드 ---------- */
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 18px;
+}
+.card + .card { margin-top: 14px; }
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 12px;
+  margin: 18px 0;
+  padding: 0;
+  list-style: none;
+}
+.menu-grid a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 104px;
+  padding: 16px 10px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  color: var(--ink);
+  text-decoration: none;
+  text-align: center;
+  transition: transform .12s ease, border-color .12s ease;
+}
+.menu-grid a:hover { transform: translateY(-2px); border-color: var(--key); }
+.menu-grid .emoji { font-size: 26px; line-height: 1; }
+.menu-grid .label { font-weight: 700; font-size: 15px; }
+.menu-grid .sub { font-size: 12px; color: var(--muted); }
+
+/* ---------- 제목 ---------- */
+.page-eyebrow {
+  font-size: 12px; font-weight: 700; letter-spacing: .12em;
+  color: var(--key); text-transform: uppercase;
+}
+h1.page-title { margin: 4px 0 6px; font-size: 26px; font-weight: 800; letter-spacing: -.02em; }
+.page-desc { margin: 0 0 18px; color: var(--ink-soft); font-size: 15px; }
+h2.sec-title { margin: 26px 0 10px; font-size: 18px; font-weight: 800; }
+
+/* ---------- 버튼 ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  padding: 11px 18px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--ink);
+  font: inherit; font-size: 15px; font-weight: 700;
+  text-decoration: none; cursor: pointer;
+}
+.btn:hover { background: var(--key-soft); }
+.btn-primary { background: var(--key); border-color: var(--key); color: #fff; }
+.btn-primary:hover { filter: brightness(1.06); background: var(--key); }
+.btn-sm { padding: 6px 12px; font-size: 13px; font-weight: 600; }
+
+/* ---------- 선택 바 (번역본/장 이동) ---------- */
+.toolbar {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 8px;
+  margin-bottom: 14px;
+}
+.seg {
+  display: inline-flex; padding: 3px; gap: 3px;
+  background: var(--key-soft); border-radius: 999px;
+}
+.seg button {
+  padding: 7px 14px; border: 0; border-radius: 999px;
+  background: transparent; color: var(--ink-soft);
+  font: inherit; font-size: 14px; font-weight: 700; cursor: pointer;
+}
+.seg button.active { background: #fff; color: var(--key); box-shadow: var(--shadow); }
+select.pick, input.pick {
+  padding: 9px 12px;
+  border: 1px solid var(--line); border-radius: 10px;
+  background: #fff; color: var(--ink);
+  font: inherit; font-size: 15px;
+}
+input.pick { min-width: 0; }
+
+/* ---------- 본문 ---------- */
+.verse-list { margin: 0; padding: 0; list-style: none; }
+.verse {
+  display: flex; gap: 10px;
+  padding: 9px 8px;
+  border-radius: 10px;
+  scroll-margin-top: 72px;
+}
+.verse:hover { background: #fbf8f3; }
+.verse.target { background: var(--accent-soft); }
+.verse-no {
+  flex: 0 0 auto; min-width: 26px;
+  color: var(--key); font-size: 13px; font-weight: 800;
+  padding-top: 3px;
+}
+.verse-body { flex: 1 1 auto; min-width: 0; }
+.verse-ko { font-size: 17px; line-height: 1.85; word-break: keep-all; }
+.verse-en { margin-top: 4px; font-size: 15px; line-height: 1.7; color: var(--ink-soft); }
+.verse-empty { color: var(--muted); font-style: italic; }
+.verse-acts { display: flex; gap: 4px; opacity: 0; transition: opacity .12s; }
+.verse:hover .verse-acts, .verse:focus-within .verse-acts { opacity: 1; }
+.icon-btn {
+  border: 0; background: transparent; cursor: pointer;
+  padding: 4px 6px; border-radius: 8px; font-size: 15px; line-height: 1;
+}
+.icon-btn:hover { background: var(--key-soft); }
+.icon-btn.on { color: #d99a2b; }
+
+/* ---------- 상태 ---------- */
+.empty, .loading {
+  padding: 28px 10px; text-align: center;
+  color: var(--muted); font-size: 14px;
+}
+
+/* ---------- 출처 표기 ---------- */
+.source-note {
+  margin: 22px 0 0;
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #faf7f2;
+  color: var(--ink-soft);
+  font-size: 13px;
+  line-height: 1.7;
+}
+.source-note strong { color: var(--ink); }
+
+/* ---------- 푸터 ---------- */
+.site-foot {
+  margin-top: 34px;
+  padding: 22px 0 34px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 13px;
+}
+.foot-links { display: flex; flex-wrap: wrap; gap: 10px 16px; margin-bottom: 12px; }
+.foot-links a { color: var(--ink-soft); text-decoration: none; }
+.foot-links a:hover { text-decoration: underline; }
+
+/* ---------- 모바일 ---------- */
+@media (max-width: 560px) {
+  body { font-size: 15px; }
+  .wrap { padding: 0 14px; }
+  h1.page-title { font-size: 22px; }
+  .menu-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .verse-ko { font-size: 16px; }
+  .verse-acts { opacity: 1; }
+}
+
+/* ---------- 읽기표 ---------- */
+.plan-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(38px, 1fr));
+  gap: 5px;
+}
+.plan-cell {
+  min-height: 34px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--ink-soft);
+  font: inherit; font-size: 12px; font-weight: 700;
+  cursor: pointer;
+}
+.plan-cell:hover { background: var(--key-soft); }
+.plan-cell.on { background: var(--accent); border-color: var(--accent); color: #fff; }

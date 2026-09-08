@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>성경 퀴즈 - 성경아 놀자</title>
+<meta name="description" content="성경 본문에서 낱말을 가린 빈칸 퀴즈로 말씀을 복습해 보세요.">
+<link rel="canonical" href="https://bible.chatgpts.kr/quiz.html">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="성경아 놀자">
+<meta property="og:title" content="성경 퀴즈 - 성경아 놀자">
+<meta property="og:description" content="성경 본문에서 낱말을 가린 빈칸 퀴즈로 말씀을 복습해 보세요.">
+<meta property="og:url" content="https://bible.chatgpts.kr/quiz.html">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=20260909a">
+<link rel="stylesheet" href="css/cg-auth.css?v=20260909a">
+
+<meta name="google-adsense-account" content="ca-pub-3321070604000141">
+<script defer src="js/cg-ads.js?v=20260909a" data-client="ca-pub-3321070604000141"></script>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="site-head">
+    <a href="index.html" class="brand-logo">
+      <span class="logo-char">✝</span>
+      <span>성경아 <span class="dot">놀자</span></span>
+    </a>
+    <div class="header-right"></div>
+  </header>
+
+  <nav class="nav-scroll" aria-label="주요 메뉴">
+      <a href="index.html" class="nav-chip">🏠 홈</a>
+      <a href="today.html" class="nav-chip">☀️ 오늘의 말씀</a>
+      <a href="read.html" class="nav-chip">📖 성경 읽기</a>
+      <a href="search.html" class="nav-chip">🔍 구절 검색</a>
+      <a href="topic.html" class="nav-chip">🏷️ 주제별 말씀</a>
+      <a href="plan.html" class="nav-chip">📅 읽기표</a>
+      <a href="memory.html" class="nav-chip">🃏 암송 카드</a>
+      <a href="quiz.html" class="nav-chip active">🎯 성경 퀴즈</a>
+      <a href="my.html" class="nav-chip">📂 내 기록</a>
+  </nav>
+
+  <div class="page-eyebrow">성경 퀴즈</div>
+  <h1 class="page-title">성경 퀴즈</h1>
+  <p class="page-desc">본문에서 한 낱말을 가린 빈칸 문제입니다. 문제는 실제 성경 본문에서 그대로 만들어집니다.</p>
+
+  <section class="card" id="quiz-box"><div class="loading">준비 중…</div></section>
+
+  <div class="source-note">
+    <strong>사용 번역본</strong><br>
+    한글 성경: 성경전서 개역한글판 (대한성서공회)<br>
+    영어 성경: World English Bible (WEB), Public Domain<br>
+    본문은 원문 그대로 표시하며 임의로 수정하지 않습니다.
+    <a href="about.html">번역본 안내 자세히 보기 →</a>
+  </div>
+
+  <footer class="site-foot">
+    <div class="foot-links">
+        <a href="https://hanja.chatgpts.kr" target="_blank" rel="noopener">📖 한자야 놀자</a>
+        <a href="https://voca.chatgpts.kr" target="_blank" rel="noopener">⚡ 단어야 놀자</a>
+        <a href="https://history.chatgpts.kr" target="_blank" rel="noopener">📜 역사야 놀자</a>
+        <a href="https://fortune.chatgpts.kr" target="_blank" rel="noopener">🔮 운세야 놀자</a>
+        <a href="https://mindtest.chatgpts.kr" target="_blank" rel="noopener">🧠 마인드테스트</a>
+        <a href="https://work.chatgpts.kr" target="_blank" rel="noopener">💼 워크야 놀자</a>
+        <a href="https://money.chatgpts.kr" target="_blank" rel="noopener">💰 머니야 놀자</a>
+        <a href="https://tools.chatgpts.kr" target="_blank" rel="noopener">🛠️ 문서야 놀자</a>
+        <a href="https://chatgpts.kr" target="_blank" rel="noopener">🏠 chatgpts.kr</a>
+    </div>
+    <p>
+      한글 성경: 성경전서 개역한글판 (대한성서공회) ·
+      영어 성경: World English Bible (WEB), Public Domain
+    </p>
+    <p>성경아 놀자는 개인 읽기와 묵상을 돕는 참고용 도구입니다. 특정 교단이나 신학 입장을 대변하지 않습니다.</p>
+    <p>© 2026 성경아 놀자 (bible.chatgpts.kr)</p>
+  </footer>
+</div>
+
+<script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script defer src="js/supabase-config.js?v=20260909a"></script>
+<script defer src="js/cg-auth.js?v=20260909a" data-service="bible" data-mount=".header-right" data-mount-mode="append" data-my-page="my.html" data-hint="로그인하면 읽기 기록과 즐겨찾기를 저장할 수 있어요."></script>
+<script defer src="js/bible-data.js?v=20260909a"></script>
+<script defer src="js/bible-refs.js?v=20260909a"></script>
+<script defer src="js/bible-sync.js?v=20260909a"></script>
+<script defer src="js/quiz.js?v=20260909a"></script>
+<script defer src="js/track.js?v=20260909a" data-service="bible"></script>
+</body>
+</html>
