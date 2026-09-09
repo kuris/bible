@@ -27,10 +27,11 @@ FAMILY = [
     ('https://voca.chatgpts.kr',     '⚡ 단어야 놀자'),
     ('https://history.chatgpts.kr',  '📜 역사야 놀자'),
     ('https://fortune.chatgpts.kr',  '🔮 운세야 놀자'),
-    ('https://mindtest.chatgpts.kr', '🧠 마인드테스트'),
+    ('https://mind.chatgpts.kr',     '🧠 마인드테스트'),
     ('https://work.chatgpts.kr',     '💼 워크야 놀자'),
     ('https://money.chatgpts.kr',    '💰 머니야 놀자'),
     ('https://tools.chatgpts.kr',    '🛠️ 문서야 놀자'),
+    ('https://maum.chatgpts.kr',     '🪷 마음아 놀자'),
     ('https://chatgpts.kr',          '🏠 chatgpts.kr'),
 ]
 
